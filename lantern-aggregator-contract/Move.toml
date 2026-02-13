@@ -1,0 +1,47 @@
+[package]
+name = "lantern-aggregator-contract"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+# Sui 框架 (本地缓存)
+Sui = { local = "/Users/tatar/.move/https___github_com_MystenLabs_sui_git_4e8b6eda7d6411d80c62f39ac8a4f028e8d174c4/crates/sui-framework/packages/sui-framework" }
+
+# Cetus CLMM (本地缓存)
+CetusClmm = { local = "/Users/tatar/.move/https___github_com_CetusProtocol_cetus-contracts_git_testnet-v0.0.2/packages/cetus_clmm" }
+
+# Cetus 子依赖 (本地缓存) - 解决网络问题
+[dependencies.MoveSTL]
+git = "https://github.com/CetusProtocol/move-stl.git"
+rev = "testnet-v1.3.0"
+dir = "."
+override = true
+
+[dependencies.IntegerMate]
+git = "https://github.com/CetusProtocol/integer-mate.git"
+rev = "testnet-v1.3.0"
+dir = "."
+override = true
+
+# MoveStdlib (本地缓存) - 解决版本冲突
+[dependencies.std]
+local = "/Users/tatar/.move/https___github_com_MystenLabs_sui_git_4e8b6eda7d6411d80c62f39ac8a4f028e8d174c4/crates/sui-framework/packages/move-stdlib"
+override = true
+
+# Sui Framework (本地缓存) - 解决 CetusClmm 依赖冲突
+[dependencies.sui]
+local = "/Users/tatar/.move/https___github_com_MystenLabs_sui_git_4e8b6eda7d6411d80c62f39ac8a4f028e8d174c4/crates/sui-framework/packages/sui-framework"
+override = true
+
+[addresses]
+lantern = "0x0"
+std = "0x1"
+sui = "0x2"
+cetus = "0x05"
+cetus_integrate = "0xb2db7142fa83210a7d78d9c12ac49c043b3cbbd482224fea6e3da00aa5a5ae2d"
+
+[dev-addresses]
+lantern = "0x0"
+std = "0x1"
+sui = "0x2"
+cetus_integrate = "0xb2db7142fa83210a7d78d9c12ac49c043b3cbbd482224fea6e3da00aa5a5ae2d"

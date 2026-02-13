@@ -1,0 +1,68 @@
+# ==================== Lantern Aggregator ====================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+build/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Move contract build artifacts
+lantern-aggregator-contract/build/
+lantern-aggregator-contract/Move.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# MongoDB data (local)
+data/
+mongodb_data/
+
+# Zsh history
+.zsh_history
+
+# Cursor specific
+.cursor/
+.cursorignore
+
+# Test files
+tests/
+__tests__/
+*.test.ts
+*.spec.ts
+
